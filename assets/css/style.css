@@ -120,7 +120,7 @@
   .jumbotron {
     align-content: center;
     text-align: center;
-    background-color: #423737;
+    background-color: saddlebrown;
     padding: 1px;
     color: wheat;
   }
@@ -163,4 +163,10 @@
   .names {
     margin-top: 6px;
     height: 37px;
+  }
+
+  .container {
+    position: relative;
+    text-align: center;
+    color: black;
   }
