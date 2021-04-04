@@ -5,6 +5,9 @@ var userFormEl = document.querySelector("#user-form")
 var searchHistoryEl = document.querySelector("#search-history")
 var cityNameHolder = []
 
+
+
+
 //init cityNameArray
 var cityNameArray = JSON.parse(localStorage.getItem("cityNameArray"));
     // //init homepage if none exist in local storage
@@ -62,8 +65,22 @@ function getCityInfo (city) {
 //main content builder
 function cityUvInfo (lat, lon, requestName) {
     //format request to url
+    debugger;
+
+    const lt = 60.936;
+    const lg = 5.114;
+
     var oneUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon +  "&appid=27a6e74d4260774945191a8dc4b750e0&units=imperial"
+    var stormApi = "https://api.stormglass.io/v2/tide/extremes/point?lat=" + lat + "&lng=" + lon;
     var cityName = requestName;
+
+    fetch(stormApi, {
+  headers: {
+    'Authorization': 'a6c43a5a-9523-11eb-a242-0242ac130002-a6c43adc-9523-11eb-a242-0242ac130002'
+  }
+    }).then((response) => response.json()).then((jsonData) => {
+    console.log(jsonData)
+    });
 
     //make request to api
     fetch(oneUrl).then(function(response){
