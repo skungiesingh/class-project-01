@@ -9,16 +9,16 @@ var cityNameHolder = []
 
 
 //init cityNameArray
-var cityNameArray = JSON.parse(localStorage.getItem("cityNameArray"));
-    // //init homepage if none exist in local storage
-    if(!cityNameArray){
-        cityNameArray = []
-        getCityInfo("Miami","Tampa","");
-    } else {
-        getCityInfo(cityNameArray[cityNameArray.length-1])
-        searchHistoryBtns();
-    }
-
+//var cityNameArray = JSON.parse(localStorage.getItem("cityNameArray"));
+//    // //init homepage if none exist in local storage
+//    if(!cityNameArray){
+//        cityNameArray = []
+//        getCityInfo("Miami","Tampa","");
+//    } else {
+//        getCityInfo(cityNameArray[cityNameArray.length-1])
+//        searchHistoryBtns();
+//   }
+//
 //time converter (time is received from api as a unix code)
 function timeConverter (inputTime) {
 let unix_timestamp = inputTime;
@@ -65,10 +65,8 @@ function getCityInfo (city) {
 //main content builder
 function cityUvInfo (lat, lon, requestName) {
     //format request to url
-    debugger;
+    // debugger;
 
-    const lt = 60.936;
-    const lg = 5.114;
 
     var oneUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon +  "&appid=27a6e74d4260774945191a8dc4b750e0&units=imperial"
     var stormApi = "https://api.stormglass.io/v2/tide/extremes/point?lat=" + lat + "&lng=" + lon;
@@ -80,6 +78,12 @@ function cityUvInfo (lat, lon, requestName) {
   }
     }).then((response) => response.json()).then((jsonData) => {
     console.log(jsonData)
+    console.log(jsonData.data[0].height.toFixed(2))
+
+    var experiment = jsonData.data[1].time
+    var expPart2 = experiment.split("T")
+    var expPart3 = expPart2[1].split("+")
+    console.log(expPart3[0])
     });
 
     //make request to api
@@ -88,15 +92,21 @@ function cityUvInfo (lat, lon, requestName) {
     })
     .then(function(data){
 
-    
-         //forecast looper
-        for (i =1; i<=5; i++){
+      
+            
+       
+        // forecast looper
+        for (i =0; i<=4; i++){
+
+            var j = i*4
+            
 
             var forecast = {
                 Date: timeConverter(data.daily[i].dt),
                 Temp: data.daily[i].temp.day,
                 Humidity: data.daily[i].humidity, 
                 Icon: "http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png"
+            
             }
 
             
