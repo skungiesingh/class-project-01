@@ -111,8 +111,6 @@
   }
 
   #content-box {
-    border-left: black 2px solid;
-    border-bottom: black 2px solid;
     padding-left: 5px;
     padding-top: 10px
   }
@@ -120,13 +118,11 @@
   .jumbotron {
     align-content: center;
     text-align: center;
-    background-color: #423737;
+    
     padding: 1px;
-    color: wheat;
   }
 
   .search_group {
-    background-color: #e4e1e1;
     margin: 10px 10px 10px 0;
     padding: 10px;
   }
@@ -163,4 +159,18 @@
   .names {
     margin-top: 6px;
     height: 37px;
+  }
+
+  .container {
+    position: relative;
+    text-align: center;
+    color: black;
+  }
+
+  h1 {
+    color: rgba(248, 224, 3, 0.849);
+  }
+
+  h2 {
+    color: darkblue;
   }
