@@ -13,7 +13,7 @@ var cityNameArray = JSON.parse(localStorage.getItem("cityNameArray"));
     // //init homepage if none exist in local storage
     if(!cityNameArray){
         cityNameArray = []
-        getCityInfo("Melbourne");
+        getCityInfo("Miami","Tampa","");
     } else {
         getCityInfo(cityNameArray[cityNameArray.length-1])
         searchHistoryBtns();
