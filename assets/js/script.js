@@ -9,16 +9,15 @@ var cityNameHolder = []
 
 
 //init cityNameArray
-//var cityNameArray = JSON.parse(localStorage.getItem("cityNameArray"));
-//    // //init homepage if none exist in local storage
-//    if(!cityNameArray){
-//        cityNameArray = []
-//        getCityInfo("Miami","Tampa","");
-//    } else {
-//        getCityInfo(cityNameArray[cityNameArray.length-1])
-//        searchHistoryBtns();
-//   }
-//
+var cityNameArray = JSON.parse(localStorage.getItem("cityNameArray"));
+    // init homepage if none exist in local storage
+    if(!cityNameArray){
+        cityNameArray = ["Miami","Tampa","Jacksonville", "Melbourne"]
+    } else {
+        getCityInfo(cityNameArray[cityNameArray.length-1])
+        searchHistoryBtns();
+}
+
 //time converter (time is received from api as a unix code)
 function timeConverter (inputTime) {
 let unix_timestamp = inputTime;
@@ -231,7 +230,7 @@ function searchHistoryBtns (){
             }
         }        
 }
-
+getCityInfo();
 //event listeners
 searchHistoryEl.addEventListener("click", clickButtonHandler)
 userFormEl.addEventListener("submit", formSubmitHandler);
