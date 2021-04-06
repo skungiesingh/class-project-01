@@ -283,7 +283,7 @@ function searchHistoryBtns (){
             }
         }        
 }
-getCityInfo();
+
 //event listeners
 searchHistoryEl.addEventListener("click", clickButtonHandler)
 userFormEl.addEventListener("submit", formSubmitHandler);
