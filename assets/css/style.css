@@ -108,6 +108,7 @@
     background-color: aqua;
     padding: 0 10px 0 10px;
     border-radius: 10px;
+    box-shadow: 2px 2px darkblue;
   }
 
   #content-box {
