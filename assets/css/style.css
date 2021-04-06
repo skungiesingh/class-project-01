@@ -1,3 +1,6 @@
+body {
+  font-family: 'Merienda', cursive;
+}
 
 /* flex bootstrap clone */
   .flex-row {
@@ -169,10 +172,8 @@
 
   h1 {
     color: rgba(248, 224, 3, 0.849);
-    font-family: 'Permanent marker', cursive;
   }
 
   h2 {
     color: darkblue;
-    font-family: 'Permanent marker', cursive;
   }
