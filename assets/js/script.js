@@ -8,16 +8,16 @@ var cityNameHolder = []
 
 
 
-//init cityNameArray
+// init cityNameArray
 var cityNameArray = JSON.parse(localStorage.getItem("cityNameArray"));
-    // //init homepage if none exist in local storage
-    if(!cityNameArray){
-        cityNameArray = []
-        getCityInfo("Melbourne");
-    } else {
-        getCityInfo(cityNameArray[cityNameArray.length-1])
-        searchHistoryBtns();
-    }
+   // //init homepage if none exist in local storage
+   if(!cityNameArray){
+       cityNameArray = ["Miami", "Tampa", "Jacksonville", "Melbourne"]
+    
+   } else {
+       getCityInfo(cityNameArray[cityNameArray.length-1])
+       searchHistoryBtns();
+  }
 
 //time converter (time is received from api as a unix code)
 function timeConverter (inputTime) {
@@ -65,10 +65,8 @@ function getCityInfo (city) {
 //main content builder
 function cityUvInfo (lat, lon, requestName) {
     //format request to url
-   
+    // debugger;
 
-    const lt = 60.936;
-    const lg = 5.114;
 
     var oneUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon +  "&appid=27a6e74d4260774945191a8dc4b750e0&units=imperial"
     var stormApi = "https://api.stormglass.io/v2/tide/extremes/point?lat=" + lat + "&lng=" + lon;
@@ -80,6 +78,12 @@ function cityUvInfo (lat, lon, requestName) {
   }
     }).then((response) => response.json()).then((jsonData) => {
     console.log(jsonData)
+    console.log(jsonData.data[0].height.toFixed(2))
+
+    var experiment = jsonData.data[1].time
+    var expPart2 = experiment.split("T")
+    var expPart3 = expPart2[1].split("+")
+    console.log(expPart3[0])
     });
 
     //make request to api
@@ -88,98 +92,21 @@ function cityUvInfo (lat, lon, requestName) {
     })
     .then(function(data){
 
-        // //today object
-        // var today = {
-        //     Date: timeConverter(data.current.dt),
-        //     Temp: data.current.temp,
-        //     Humidity: data.current.humidity,
-        //     Wind: data.current.wind_speed,
-        //     Uvi: data.current.uvi,
-        //     Icon: "http://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png"
-        // }
-
-        // //create h2 to hold titleCity
-        // var titleCityEl = document.createElement("h2")
-        // titleCityEl.className = "titleCity";
-        // titleCityEl.innerHTML = cityName + " (" + today.Date + ")";
-
-        // var imageIconEl = document.createElement("img")
-        // imageIconEl.className = "imgIcon";
-        // imageIconEl.setAttribute("src", today.Icon);
-
-        
-        // titleCityEl.appendChild(imageIconEl)
-        // contentBoxEl.appendChild(titleCityEl)
-
-
-        // //create temp h3
-        // var cityTempEl = document.createElement("h3");
-        // cityTempEl.textContent = "Temperature: " + today.Temp;
-        
-        // var tempSymbolEl = document.createElement("span");
-        // tempSymbolEl.setAttribute("id", "temp")
-        // tempSymbolEl.innerHTML = " &#8457;";
-
-        // cityTempEl.appendChild(tempSymbolEl)
-        // contentBoxEl.appendChild(cityTempEl)
-
-        // //create humidity h3
-        // var cityHumidityEl = document.createElement("h3");
-        // cityHumidityEl.textContent = "Humidity: " + today.Humidity;
-        
-        // var humiditySymbolEl = document.createElement("span");
-        // humiditySymbolEl.setAttribute("id", "humidity")
-        // humiditySymbolEl.innerHTML = " &#x25;";
-
-        // cityHumidityEl.appendChild(humiditySymbolEl)
-        // contentBoxEl.appendChild(cityHumidityEl)
-            
-
-        // //create wind speed h3
-        // var cityWindEl = document.createElement("h3");
-        // cityWindEl.textContent = "Wind: ";
-        
-        // var windSymbolEl = document.createElement("span");
-        // windSymbolEl.setAttribute("id", "wind")
-        // windSymbolEl.innerHTML = today.Wind + " MPH";
-
-        // cityWindEl.appendChild(windSymbolEl)
-        // contentBoxEl.appendChild(cityWindEl)
-            
-
-        // //create uv index
-        // var cityUvEl = document.createElement("h3");
-        // cityUvEl.textContent = "UV Index: ";
-        
-        // var uvSymbolEl = document.createElement("span");
-
-        // //index color identifier
-        // if (today.Uvi >= 0 && today.Uvi < 3){
-        //     uvSymbolEl.classList = "uv uv_index_low";
-        // } else if (today.Uvi >= 3 && today.Uvi < 6){
-        //     uvSymbolEl.classList = "uv uv_index_moderate";
-        // } else if (today.Uvi >= 6 && today.Uvi < 8){
-        //     uvSymbolEl.classList = "uv uv_index_high";
-        // } else if (today.Uvi >= 8 && today.Uvi < 11){
-        //     uvSymbolEl.classList = "uv uv_index_very_high";
-        // } else {
-        //     uvSymbolEl.classList = "uv uv_index_extreme";
-        // }
-        
-        // uvSymbolEl.textContent = today.Uvi;
-
-        // cityUvEl.appendChild(uvSymbolEl)
-        // contentBoxEl.appendChild(cityUvEl)
+      
             
        
         // forecast looper
-        for (i =1; i<=5; i++){
+        for (i =0; i<=4; i++){
+
+            var j = i*4
+            
 
             var forecast = {
                 Date: timeConverter(data.daily[i].dt),
                 Temp: data.daily[i].temp.day,
                 Humidity: data.daily[i].humidity, 
                 Icon: "http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png"
+            
             }
 
             
