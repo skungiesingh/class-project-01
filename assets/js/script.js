@@ -13,10 +13,7 @@ var cityNameArray = JSON.parse(localStorage.getItem("cityNameArray"));
    // //init homepage if none exist in local storage
    if(!cityNameArray){
        cityNameArray = ["Miami", "Tampa", "Jacksonville", "Melbourne"]
-    //    getCityInfo("Miami"),
-    //    getCityInfo("Tampa")
-    //    getCityInfo("Jacksonville")
-    //    getCityInfo("Melbourne");
+    
    } else {
        getCityInfo(cityNameArray[cityNameArray.length-1])
        searchHistoryBtns();
@@ -203,7 +200,7 @@ function clickButtonHandler (event){
     //clear old content
     contentBoxEl.textContent="";
     forecastBoxEl.textContent= "";
-    cityInputEl.value= "";
+    // cityInputEl.value= "";
   }
 }
 
