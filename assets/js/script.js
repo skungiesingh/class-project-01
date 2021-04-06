@@ -8,15 +8,16 @@ var cityNameHolder = []
 
 
 
-//init cityNameArray
+// init cityNameArray
 var cityNameArray = JSON.parse(localStorage.getItem("cityNameArray"));
-    // init homepage if none exist in local storage
-    if(!cityNameArray){
-        cityNameArray = ["Miami","Tampa","Jacksonville", "Melbourne"]
-    } else {
-        getCityInfo(cityNameArray[cityNameArray.length-1])
-        searchHistoryBtns();
-}
+   // //init homepage if none exist in local storage
+   if(!cityNameArray){
+       cityNameArray = ["Miami", "Tampa", "Jacksonville", "Melbourne"]
+    
+   } else {
+       getCityInfo(cityNameArray[cityNameArray.length-1])
+       searchHistoryBtns();
+  }
 
 //time converter (time is received from api as a unix code)
 function timeConverter (inputTime) {
@@ -199,7 +200,7 @@ function clickButtonHandler (event){
     //clear old content
     contentBoxEl.textContent="";
     forecastBoxEl.textContent= "";
-    cityInputEl.value= "";
+    // cityInputEl.value= "";
   }
 }
 
