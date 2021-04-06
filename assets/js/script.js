@@ -55,51 +55,50 @@ function getCityInfo (city) {
         
         //send info
         cityUvInfo (cityLat, cityLon, requestName);
-
+        
         //to get the same name regardless of user input
         localStorageHolder(requestName);
         cityNameHolder = requestName;
     });
 };
 
+
+
+
+
 //main content builder
-function cityUvInfo (lat, lon, requestName) {
+async function cityUvInfo (lat, lon, requestName) {
     //format request to url
     // debugger;
 
 
     var oneUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon +  "&appid=27a6e74d4260774945191a8dc4b750e0&units=imperial"
     var stormApi = "https://api.stormglass.io/v2/tide/extremes/point?lat=" + lat + "&lng=" + lon;
-    var cityName = requestName;
 
-    fetch(stormApi, {
-  headers: {
-    'Authorization': 'a6c43a5a-9523-11eb-a242-0242ac130002-a6c43adc-9523-11eb-a242-0242ac130002'
-  }
-    }).then((response) => response.json()).then((jsonData) => {
-    console.log(jsonData)
-    console.log(jsonData.data[0].height.toFixed(2))
+    var stormApiArr = await fetch(stormApi, {
+        headers: {
+            'Authorization': 'a6c43a5a-9523-11eb-a242-0242ac130002-a6c43adc-9523-11eb-a242-0242ac130002'
+        }
+        })
+        .then(function(jsonData){
+            return jsonData.json();
+        })
+        .then(function(jsonData){
+           
+            console.log(jsonData)
+            return jsonData;
+        });
 
-    var experiment = jsonData.data[1].time
-    var expPart2 = experiment.split("T")
-    var expPart3 = expPart2[1].split("+")
-    console.log(expPart3[0])
-    });
+        console.log(stormApiArr)
 
     //make request to api
     fetch(oneUrl).then(function(response){
         return response.json()
     })
     .then(function(data){
-
-      
-            
        
         // forecast looper
         for (i =0; i<=4; i++){
-
-            var j = i*4
-            
 
             var forecast = {
                 Date: timeConverter(data.daily[i].dt),
@@ -108,7 +107,43 @@ function cityUvInfo (lat, lon, requestName) {
                 Icon: "http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png"
             
             }
+            
+            
 
+            var a = i*4;
+            var b = a+1;
+            var c = a+2;
+            var d = a+3;
+             
+
+            function tideBuilder(j){
+                var experiment = stormApiArr.data[j].time
+                var expPart2 = experiment.split("T")
+                var expPart3 = expPart2[1].split("+")
+                var expPart4 = expPart3[0].split(":");
+                var expPart5 = expPart4[0] + ":" + expPart4[1];
+                return expPart5
+            }
+            var tide ={
+                periodOneTime: tideBuilder(a),
+                periodOneHeight: stormApiArr.data[a].height.toFixed(2),
+                periodOneType: stormApiArr.data[a].type,
+
+                periodTwoTime: tideBuilder(b),
+                periodTwoHeight: stormApiArr.data[b].height.toFixed(2),
+                periodTwoType: stormApiArr.data[b].type,
+
+                periodThreeTime: tideBuilder(c),
+                periodThreeHeight: stormApiArr.data[c].height.toFixed(2),
+                periodThreeType: stormApiArr.data[c].type,
+
+                periodFourTime: tideBuilder(d),
+                periodFourHeight: stormApiArr.data[d].height.toFixed(2),
+                periodFourType: stormApiArr.data[d].type
+
+            }
+            
+            
             
             //create forecast cards
             var forecastCard = document.createElement("div")
@@ -132,15 +167,33 @@ function cityUvInfo (lat, lon, requestName) {
                 var forecastHumidity = document.createElement("p")
                 forecastHumidity.innerHTML = "Humidity: " + forecast.Humidity + "&#x25;"
 
+                //tide holder
+                var periodOneTide = document.createElement("p")
+                periodOneTide.innerHTML = "Time:" + tide.periodOneTime + " Wave Height:" + tide.periodOneHeight 
+
+                var periodTwoTide = document.createElement("p")
+                periodTwoTide.innerHTML = "Time:" + tide.periodTwoTime + " Wave Height:" + tide.periodTwoHeight
+
+                var periodThreeTide = document.createElement("p")
+                periodThreeTide.innerHTML = "Time:" + tide.periodThreeTime + " Wave Height:" + tide.periodThreeHeight
+
+                var periodFourTide = document.createElement("p")
+                periodFourTide.innerHTML = "Time:" + tide.periodFourTime + " Wave Height:" + tide.periodFourHeight
+
                 //build card
                 forecastCard.appendChild(forecastDate)
                 forecastCard.appendChild(forecastImg)
                 forecastCard.appendChild(forecastMinMax)
                 forecastCard.appendChild(forecastHumidity)
+                forecastCard.appendChild(periodOneTide)
+                forecastCard.appendChild(periodTwoTide)
+                forecastCard.appendChild(periodThreeTide)
+                forecastCard.appendChild(periodFourTide)
 
                 //attach cards to container
                 forecastBoxEl.appendChild(forecastCard)
         }
+        console.log(tide)
     });
 }
 
