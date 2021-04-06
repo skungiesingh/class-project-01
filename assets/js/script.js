@@ -273,7 +273,7 @@ function clickButtonHandler (event){
     //clear old content
     contentBoxEl.textContent="";
     forecastBoxEl.textContent= "";
-    cityInputEl.value= "";
+    // cityInputEl.value= "";
   }
 }
 
