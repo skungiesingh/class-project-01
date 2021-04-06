@@ -44,7 +44,6 @@ function getCityInfo (city) {
         if(response.ok){
             return response.json()
         } else {
-            alert("Error: Please Enter Valid City")
             getCityInfo(cityNameArray[cityNameArray.length-1])
         }
     })
@@ -284,7 +283,7 @@ function searchHistoryBtns (){
             }
         }        
 }
-
+getCityInfo();
 //event listeners
 searchHistoryEl.addEventListener("click", clickButtonHandler)
 userFormEl.addEventListener("submit", formSubmitHandler);
