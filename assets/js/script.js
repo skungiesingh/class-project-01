@@ -44,7 +44,6 @@ function getCityInfo (city) {
         if(response.ok){
             return response.json()
         } else {
-            alert("Error: Please Enter Valid City")
             getCityInfo(cityNameArray[cityNameArray.length-1])
         }
     })
