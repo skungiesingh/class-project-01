@@ -1,0 +1,190 @@
+body {
+  font-family: 'Merienda', cursive;
+}
+
+/* flex bootstrap clone */
+  .flex-row {
+    display: flex;
+  }
+  
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .col-1 {
+    flex: 0 0 calc(100% * 1 / 12 - 2%);
+  }
+  
+  .col-2 {
+    flex: 0 0 calc(100% * 2 / 12 - 2%);
+  }
+  
+  .col-3 {
+    flex: 0 0 calc(100% * 3 / 12 - 2%);
+  }
+  
+  .col-4 {
+    flex: 0 0 calc(100% * 4 / 12 - 2%);
+  }
+  
+  .col-5 {
+    flex: 0 0 calc(100% * 5 / 12 - 2%);
+  }
+  
+  .col-6 {
+    flex: 0 0 calc(100% * 6 / 12 - 2%);
+  }
+  
+  .col-7 {
+    flex: 0 0 calc(100% * 7 / 12 - 2%);
+  }
+  
+  .col-8 {
+    flex: 0 0 calc(100% * 8 / 12 - 2%);
+  }
+  
+  .col-9 {
+    flex: 0 0 calc(100% * 9 / 12 - 2%);
+  }
+  
+  .col-10 {
+    flex: 0 0 calc(100% * 10 / 12 - 2%);
+  }
+  
+  .col-11 {
+    flex: 0 0 calc(100% * 11 / 12 - 2%);
+  }
+  
+  .col-12 {
+    flex: 0 0 100%;
+  }
+
+  /* justification */
+  .justify-space-between {
+    justify-content: space-between;
+  }
+  
+  .justify-space-around {
+    justify-content: space-around;
+  }
+
+  /* uvIndex */
+
+  .uv_index_high {
+    background-color: rgb(231, 132, 2);
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .uv_index_low {
+    background-color: rgb(100, 153, 57);
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .uv_index_moderate {
+    background-color: rgb(228, 195, 89);
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .uv_index_very_high {
+    background-color: red;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .uv_index_extreme {
+    background-color: rgb(113, 21, 136);
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .forecast_card {
+    background-color:skyblue;
+    border-radius: 10px;
+    border-left: black;
+    border-style:double;
+    padding-left: 10px;
+    padding: 7px;
+  
+  }
+
+  #content-box {
+    padding-left: 5px;
+    padding-top: 10px
+  }
+
+  .jumbotron {
+    align-content: center;
+    text-align: center;
+    
+    padding: 1px;
+  }
+
+  .search_group {
+    margin: 10px 10px 10px 0;
+    padding: 10px;
+  }
+
+  #main-box {
+    margin: 10px;
+  }
+
+  #cityInput {
+      width: 70%;
+  }
+
+  .cities {
+    width: 95%;
+    margin: auto;
+    margin-top: 5px;
+  }
+  
+  #search-history {
+    margin-top: 110px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .titleCity {
+    display: flex;
+    font-size: 29px;
+  }
+
+  .imgIcon {
+    max-height: 35px;
+  }
+
+  .names {
+    margin-top: 6px;
+    height: 37px;
+  }
+
+  .container {
+    position: relative;
+    text-align: center;
+    color: black;
+  }
+  header {
+    background-color: white;
+  }
+  .logo{
+    height: 90px;
+  }
+
+  h3 {
+    color: darkblue;
+    text-align: center;
+  }
+  .names {
+    background-color:skyblue;
+    text-align:center;
+    color: white;
+  }
