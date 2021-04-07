@@ -75,7 +75,8 @@ async function cityUvInfo (lat, lon) {
         return response.json()
     })
     .then(function(data){
-       
+        console.log(data)
+
         // forecast looper
         for (i =0; i<=4; i++){
 
@@ -86,7 +87,7 @@ async function cityUvInfo (lat, lon) {
                 Icon: "http://openweathermap.org/img/wn/" + data.daily[i].weather[0].icon + "@2x.png"
             
             }
-
+           
             //increment counters 
             var a = i*4;
             var b = a+1;
@@ -103,7 +104,7 @@ async function cityUvInfo (lat, lon) {
                 return expPart5
             }
 
-            // tide object
+            // // tide object
             var tide ={
                 periodOneTime: tideTimeBuilder(a),
                 periodOneHeight: stormApiArr.data[a].height.toFixed(2),
@@ -147,18 +148,18 @@ async function cityUvInfo (lat, lon) {
                 var forecastHumidity = document.createElement("p")
                 forecastHumidity.innerHTML = "Humidity: " + forecast.Humidity + "&#x25;"
 
-                //tide holder
+                // //tide holder
                 var periodOneTide = document.createElement("p")
-                periodOneTide.innerHTML = "Time:" + tide.periodOneTime + " Wave Height:" + tide.periodOneHeight 
+                periodOneTide.innerHTML = "Time: " + tide.periodOneTime + "</br> Wave Height: " + tide.periodOneHeight 
 
                 var periodTwoTide = document.createElement("p")
-                periodTwoTide.innerHTML = "Time:" + tide.periodTwoTime + " Wave Height:" + tide.periodTwoHeight
+                periodTwoTide.innerHTML = "Time: " + tide.periodTwoTime + "</br> Wave Height: " + tide.periodTwoHeight
 
                 var periodThreeTide = document.createElement("p")
-                periodThreeTide.innerHTML = "Time:" + tide.periodThreeTime + " Wave Height:" + tide.periodThreeHeight
+                periodThreeTide.innerHTML = "Time: " + tide.periodThreeTime + "</br> Wave Height: " + tide.periodThreeHeight
 
                 var periodFourTide = document.createElement("p")
-                periodFourTide.innerHTML = "Time:" + tide.periodFourTime + " Wave Height:" + tide.periodFourHeight
+                periodFourTide.innerHTML = "Time: " + tide.periodFourTime + "</br> Wave Height: " + tide.periodFourHeight
 
                 //build card
                 forecastCard.appendChild(forecastDate)
@@ -173,7 +174,7 @@ async function cityUvInfo (lat, lon) {
                 //attach cards to container
                 forecastBoxEl.appendChild(forecastCard)
         }
-        console.log(tide)
+        // console.log(tide)
     });
 }
 
