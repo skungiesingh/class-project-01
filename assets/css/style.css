@@ -5,7 +5,6 @@ body {
 /* flex bootstrap clone */
   .flex-row {
     display: flex;
-    flex-wrap: wrap;
   }
   
   .flex-column {
@@ -108,10 +107,13 @@ body {
   }
 
   .forecast_card {
-    background-color: aqua;
-    padding: 0 10px 0 10px;
+    background-color:skyblue;
     border-radius: 10px;
-    box-shadow: 2px 2px darkblue;
+    border-left: black;
+    border-style:double;
+    padding-left: 10px;
+    padding: 7px;
+  
   }
 
   #content-box {
@@ -145,7 +147,7 @@ body {
   }
   
   #search-history {
-    margin-top: 10px;
+    margin-top: 110px;
     display: flex;
     flex-direction: column;
   }
@@ -169,11 +171,19 @@ body {
     text-align: center;
     color: black;
   }
-
-  h1 {
-    color: rgba(248, 224, 3, 0.849);
+  header {
+    background-color: white;
+  }
+  .logo{
+    height: 90px;
   }
 
-  h2 {
+  h3 {
     color: darkblue;
+    text-align: center;
+  }
+  .names {
+    background-color:skyblue;
+    text-align:center;
+    color: white;
   }
