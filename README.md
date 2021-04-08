@@ -40,6 +40,7 @@ Some issues I faced in the development of the backend of this site was returning
 ### Maneef
 
 ### Shastri
+During the development of the site there was a collaborative effort in it's creation. We had included 2 APIs for styling. Materialize API was used for the styling of the city buttons. For the font we had used a Google Font API. During the first few pull and push fucntions we did run into a few issues with some code not being readily available once it was pushed/pulled. We had made a change in the Repo to fix that problem and it worked since. In future development I would like to add some animation when you first reach the site and an audio clip as well.
 
 ### Emily
 
