@@ -1,17 +1,10 @@
-<<<<<<< HEAD
-=======
 body {
   font-family: 'Merienda', cursive;
 }
->>>>>>> f6c7a78109fa85a0e00bbafee18c8b051fd957cf
 
 /* flex bootstrap clone */
   .flex-row {
     display: flex;
-<<<<<<< HEAD
-    flex-wrap: wrap;
-=======
->>>>>>> f6c7a78109fa85a0e00bbafee18c8b051fd957cf
   }
   
   .flex-column {
@@ -114,16 +107,6 @@ body {
   }
 
   .forecast_card {
-<<<<<<< HEAD
-    background-color: aqua;
-    padding: 0 10px 0 10px;
-    border-radius: 10px;
-  }
-
-  #content-box {
-    border-left: black 2px solid;
-    border-bottom: black 2px solid;
-=======
     background-color:skyblue;
     border-radius: 10px;
     border-left: black;
@@ -134,7 +117,6 @@ body {
   }
 
   #content-box {
->>>>>>> f6c7a78109fa85a0e00bbafee18c8b051fd957cf
     padding-left: 5px;
     padding-top: 10px
   }
@@ -142,21 +124,11 @@ body {
   .jumbotron {
     align-content: center;
     text-align: center;
-<<<<<<< HEAD
-    background-color: #423737;
-    padding: 1px;
-    color: wheat;
-  }
-
-  .search_group {
-    background-color: #e4e1e1;
-=======
     
     padding: 1px;
   }
 
   .search_group {
->>>>>>> f6c7a78109fa85a0e00bbafee18c8b051fd957cf
     margin: 10px 10px 10px 0;
     padding: 10px;
   }
@@ -176,11 +148,7 @@ body {
   }
   
   #search-history {
-<<<<<<< HEAD
-    margin-top: 10px;
-=======
     margin-top: 110px;
->>>>>>> f6c7a78109fa85a0e00bbafee18c8b051fd957cf
     display: flex;
     flex-direction: column;
   }
@@ -197,9 +165,6 @@ body {
   .names {
     margin-top: 6px;
     height: 37px;
-<<<<<<< HEAD
-  }
-=======
   }
 
   .container {
@@ -223,4 +188,3 @@ body {
     text-align:center;
     color: white;
   }
->>>>>>> f6c7a78109fa85a0e00bbafee18c8b051fd957cf
