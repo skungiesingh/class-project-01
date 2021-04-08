@@ -3,9 +3,13 @@
 
 
 ## Members:
+
 Emily Cremeans
+
 Shastri Kungiesingh
+
 Maneef Shaikh
+
 Steven Black
 
 
