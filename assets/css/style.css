@@ -1,8 +1,17 @@
+<<<<<<< HEAD
+=======
+body {
+  font-family: 'Merienda', cursive;
+}
+>>>>>>> f6c7a78109fa85a0e00bbafee18c8b051fd957cf
 
 /* flex bootstrap clone */
   .flex-row {
     display: flex;
+<<<<<<< HEAD
     flex-wrap: wrap;
+=======
+>>>>>>> f6c7a78109fa85a0e00bbafee18c8b051fd957cf
   }
   
   .flex-column {
@@ -105,6 +114,7 @@
   }
 
   .forecast_card {
+<<<<<<< HEAD
     background-color: aqua;
     padding: 0 10px 0 10px;
     border-radius: 10px;
@@ -113,6 +123,18 @@
   #content-box {
     border-left: black 2px solid;
     border-bottom: black 2px solid;
+=======
+    background-color:skyblue;
+    border-radius: 10px;
+    border-left: black;
+    border-style:double;
+    padding-left: 10px;
+    padding: 7px;
+  
+  }
+
+  #content-box {
+>>>>>>> f6c7a78109fa85a0e00bbafee18c8b051fd957cf
     padding-left: 5px;
     padding-top: 10px
   }
@@ -120,6 +142,7 @@
   .jumbotron {
     align-content: center;
     text-align: center;
+<<<<<<< HEAD
     background-color: #423737;
     padding: 1px;
     color: wheat;
@@ -127,6 +150,13 @@
 
   .search_group {
     background-color: #e4e1e1;
+=======
+    
+    padding: 1px;
+  }
+
+  .search_group {
+>>>>>>> f6c7a78109fa85a0e00bbafee18c8b051fd957cf
     margin: 10px 10px 10px 0;
     padding: 10px;
   }
@@ -146,7 +176,11 @@
   }
   
   #search-history {
+<<<<<<< HEAD
     margin-top: 10px;
+=======
+    margin-top: 110px;
+>>>>>>> f6c7a78109fa85a0e00bbafee18c8b051fd957cf
     display: flex;
     flex-direction: column;
   }
@@ -163,4 +197,30 @@
   .names {
     margin-top: 6px;
     height: 37px;
+<<<<<<< HEAD
   }
+=======
+  }
+
+  .container {
+    position: relative;
+    text-align: center;
+    color: black;
+  }
+  header {
+    background-color: white;
+  }
+  .logo{
+    height: 90px;
+  }
+
+  h3 {
+    color: darkblue;
+    text-align: center;
+  }
+  .names {
+    background-color:skyblue;
+    text-align:center;
+    color: white;
+  }
+>>>>>>> f6c7a78109fa85a0e00bbafee18c8b051fd957cf
