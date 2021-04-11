@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surf Florida</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="contact-banner">
+      <h1>Surf Florida</h1>
+  
+      <p class="contact-description">
+       What is Surfing?
+       Surfing involves standing in a specially designed surf board and riding a breaking wave. There's nothing quite like the expirence of catching one of nature's forces, the breking wave. You are able to harness that power to spread you along the wave and perform a variety of manoeuvers.
+      </p>
+    </div>
+
+    <form name="contact-form">
+      <div class="form-control">
+        <label>Full Name</label>
+        <input name="name"
+          placeholder="First and Last Name" />
+        <div class="error hide">Name is required</div>
+      </div>
+
+      <div class="form-control">
+        <label>Email</label>
+        <input
+          name="email"
+          placeholder="e.g. your_email@example.com"
+        />
+        <div class="error hide">Email is invalid</div>
+      </div>
+
+      <div class="form-control">
+        <label>Phone</label>
+        <input name="phone"
+        ></input>
+        <div class="error hide">Phone is invalid</div>
+      </div>
+
+      <div class="form-control">
+        <label>Age & Height</label>
+        <textarea name="message"></textarea>
+        <div class="error hide">Text is required</div>
+      </div>
+
+      <hr />
+
+      <button type="submit">SUBMIT FORM</button>
+    </form>
+
+    <div class="thank-you hidden">
+        Fill out the form and we will get back to you with more surfing facts.
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
