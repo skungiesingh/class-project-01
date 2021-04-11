@@ -44,6 +44,8 @@ During the development of the site there was a collaborative effort in it's crea
 
 ### Emily
 
+While developing we did run into a few issues with github and out API connection. We used setmore scheduling app for an embedded sceduler on the wesbite. The free sceduling app does hold the business back with growth. Fir future development I would love to code a calendar that would allow for more growth with locations and different activies. 
+
 ## Future Development:
 Eventually we'd like do a real life collaboration with local instructors, build logic to display color-coded peak times for activity, build in a payment and booking screen, style it to be mobile friendly, and expand the service to cover a wide range of florida-centric outdoor activities. 
 
